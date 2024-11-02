@@ -33,7 +33,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-- **Node.js** (v16+)
+- **Node.js** (v18+)
 - **npm** (v8+) or **yarn**
 - **PostgreSQL** or any supported database by Prisma
 
