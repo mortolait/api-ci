@@ -3,7 +3,8 @@ name: CI Pipeline
 on:
   push:
     branches: [ "main" ]
-  pull_request: [ "main" ]
+  pull_request: # Corrigido o nome do evento
+    branches: [ "main" ]
 
 jobs:
   test:
@@ -11,13 +12,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x ,20.x ,22.x]
-
+        node-version: [18.x, 20.x, 22.x]
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set UP nODE.JS ${{ matrix.node-version }}
+      - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -27,6 +27,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-
-  
