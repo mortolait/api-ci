@@ -1,19 +1,21 @@
-
-# nome para o workflow
 name: CI 
 
-# Trigger
 on:
   push:
     branches:
-      - main
+      - '*'
 jobs:
   build:
-    name: 'Buld and Push'
+    name: 'Build and Push'
     runs-on: ubuntu-latest
 
     steps:
-      # acesso ao codigo usando actions
       - uses: actions/checkout@v4
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
 
+      - run: npm install
+      - run: npm run test
