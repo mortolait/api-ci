@@ -16,4 +16,11 @@ jobs:
       # acesso ao codigo usando actions
       - uses: actions/checkout@v4
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
+          cache: 'yarn'
 
+        - run: yarn
+        - run: yarn run test
