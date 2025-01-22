@@ -1,0 +1,19 @@
+
+# nome para o workflow
+name: CI 
+
+# Trigger
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: 'Buld and Push'
+    runs-on: ubuntu-latest
+
+    steps:
+      # acesso ao codigo usando actions
+      - uses: actions/checkout@v4
+
+
